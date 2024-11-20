@@ -1,0 +1,110 @@
+<q-step name="profile" title="Profile Information">
+  <div class="categories-selection">
+    <label for="">Select registration type</label>
+    <div>
+      <q-radio
+        v-model="shape"
+        checked-icon="task_alt"
+        unchecked-icon="panorama_fish_eye"
+        val="line"
+        label="Line"
+      />
+      <q-radio
+        v-model="shape"
+        checked-icon="task_alt"
+        unchecked-icon="panorama_fish_eye"
+        val="line"
+        label="Line"
+      />
+    </div>
+  </div>
+  <div>
+    <!-- Dropdown for Category Selection (Delegate/Partner/Both) -->
+    <q-select
+      v-model="category"
+      :options="categoryOptions"
+      label="Select your category"
+    />
+
+    <!-- Delegate Profile Information -->
+    <div v-if="category === 'delegate'">
+      <q-input
+        v-model="delegateInfo.name"
+        label="Delegate Name"
+        :rules="[
+          (val) =>
+            (val && val.length > 0) ||
+            'Please enter delegate name',
+        ]"
+      />
+      <q-input
+        v-model="delegateInfo.phone"
+        label="Phone Number"
+        :rules="[
+          (val) =>
+            (val && val.length > 0) ||
+            'Please enter phone number',
+        ]"
+      />
+      <q-input
+        v-model="delegateInfo.organization"
+        label="Organization"
+        :rules="[
+          (val) =>
+            (val && val.length > 0) ||
+            'Please enter organization',
+        ]"
+      />
+      <q-input
+        v-model="delegateInfo.position"
+        label="Position"
+        :rules="[
+          (val) =>
+            (val && val.length > 0) ||
+            'Please enter position',
+        ]"
+      />
+    </div>
+
+    <q-btn label="Submit" :disabled="!formValid" @click="submitForm" />
+  </div>
+</q-step>
+
+<div v-if="category === 'partner'">
+  <q-input
+    v-model="partnerInfo.businessName"
+    label="Business Name"
+    :rules="[
+      (val) =>
+        (val && val.length > 0) ||
+        'Please enter business name',
+    ]"
+  />
+  <q-input
+    v-model="partnerInfo.businessPhone"
+    label="Business Phone"
+    :rules="[
+      (val) =>
+        (val && val.length > 0) ||
+        'Please enter business phone',
+    ]"
+  />
+  <q-input
+    v-model="partnerInfo.website"
+    label="Website"
+    :rules="[
+      (val) =>
+        (val && val.length > 0) ||
+        'Please enter business website',
+    ]"
+  />
+  <q-input
+    v-model="partnerInfo.businessType"
+    label="Business Type"
+    :rules="[
+      (val) =>
+        (val && val.length > 0) ||
+        'Please enter business type',
+    ]"
+  />
+</div>

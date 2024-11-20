@@ -1,0 +1,308 @@
+.profile-page {
+  .main {
+    overflow: hidden;
+    padding: 1vw 0 0;
+    display: flex;
+    height: 95vh;
+    gap: 3vh;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    background-image: url("greenleaf.png");
+    background-size: contain;
+    // background-repeat: no-repeat;
+    background-position: center;
+    // align-items: center;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 30vh;
+      z-index: -1;
+      background-image: url("/public/profilebg.png");
+      background-size: cover;
+      opacity: 0.5;
+      border-radius: 0 0 30px 30px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: rgba(85, 107, 47, 0.653);
+    }
+    .profile-section-wrapper {
+      backdrop-filter: blur(10px) saturate(200%);
+      -webkit-backdrop-filter: blur(10px) saturate(200%);
+      background: rgba(86, 86, 86, 0.484);
+
+      // box-shadow: inset 0 0 20px rgb(17, 166, 9);
+      width: 70vw;
+      border-radius: 20px;
+      margin: 6vh auto 0 auto;
+      .profile-section-cont {
+        position: relative;
+        height: fit-content;
+        .user-profile-pic-cont {
+          width: 10vw;
+          border: 1px solid #4fca22;
+          aspect-ratio: 1 / 1;
+          margin: -3rem auto 0 auto;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          svg {
+            width: 10vw;
+            height: 10vw;
+          }
+          > div {
+            // display: none;
+
+            img {
+              // display: none;
+              width: 100% !important;
+              // height: 20px;
+            }
+          }
+        }
+        .user-name-cont {
+          padding: 1.2vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          * {
+            color: white;
+            line-height: normal;
+          }
+          h2 {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+    .other-members-section-wrapper {
+      * {
+        margin: 0;
+        line-height: normal;
+      }
+      width: 70vw;
+      margin: 0 auto 0 auto;
+      .user-info-member-tab-wrapper {
+        background: transparent;
+        padding: 30px 0 0 0;
+        margin: 10px 0 0 0;
+        &:has(.main-user-details-cont) {
+          padding: 10px 0 0 0;
+          @media screen and (max-width: 1280px) {
+            .main-user-details-panel {
+              padding: 0;
+              .main-user-details-cont {
+                gap: 2.1vh;
+                label {
+                  svg {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+                > div {
+                  ul {
+                    li {
+                      svg {
+                      }
+                      span {
+                        label {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > div:nth-of-type(1) {
+          overflow: visible !important;
+        }
+        .member-profile-tab-panel {
+          padding: 0;
+        }
+        .main-user-details-panel {
+          padding: 0;
+          .main-user-details-cont {
+            backdrop-filter: blur(5px) saturate(200%);
+            -webkit-backdrop-filter: blur(5px) saturate(200%);
+            background: rgba(86, 86, 86, 0.484);
+            padding: 1vw;
+            width: auto;
+            display: flex;
+            gap: 3vh;
+            border-radius: 10px;
+            flex-direction: column;
+            label {
+              display: flex;
+              align-self: center;
+              align-items: center;
+              font-size: 0.7vw;
+              gap: 1vw;
+              color: #fff;
+              border: 1px solid yellow;
+              padding: 0.1vw 0.3vw;
+              border-radius: 100px;
+              svg {
+                width: 30px;
+                height: 30px;
+              }
+            }
+            > div {
+              display: flex;
+              gap: 5vw;
+              ul {
+                display: flex;
+                flex-direction: column;
+                gap: 3vh;
+                li {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5vw;
+                  svg {
+                    width: 22px;
+                    height: 22px;
+                  }
+                  span {
+                    font-size: 1vw;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    label {
+                      margin: 0 0 0 5px;
+                      padding: 3px 10px;
+                      border-radius: 50px;
+                      background: rgba(225, 185, 8, 0.646);
+                      border: 1px solid rgb(229, 255, 0);
+                      font-size: 0.6vw;
+                      font-weight: 600;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .profile-nav-tab {
+        width: 30vw !important;
+        margin: 0 auto;
+        border-radius: 10px;
+        backdrop-filter: blur(5px) saturate(200%);
+        -webkit-backdrop-filter: blur(5px) saturate(200%);
+        background: rgba(86, 86, 86, 0.484);
+        color: #fff;
+      }
+      .active-color {
+        background: rgba(52, 152, 82, 0.747);
+        color: #fff;
+      }
+      .member-profile-cards-cont {
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+        > div {
+          width: 22vw;
+        }
+        .member-profile-card {
+          padding: 0 1vw 1vw 1vw;
+          backdrop-filter: blur(5px) saturate(200%);
+          -webkit-backdrop-filter: blur(5px) saturate(200%);
+          background: rgba(86, 86, 86, 0.484);
+          border-radius: 10px;
+          // box-shadow: inset 0 0 20px rgb(42, 215, 33) !important;
+          .members-pro-pic-cont {
+            width: 4vw;
+            border: 1px solid #32ed2b;
+            aspect-ratio: 1 / 1;
+            margin: -1.5rem 0 0 0;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            svg {
+              width: 4vw;
+              height: 4vw;
+            }
+          }
+          .member-card-section-1 {
+            padding: 1vh 0;
+            .other-members-name-cont {
+              h6 {
+                font-size: 1.2vw;
+                color: #fff;
+              }
+            }
+            .other-members-role-cont {
+              p {
+                font-size: 0.9vw;
+                color: #ebebeb;
+              }
+            }
+          }
+          .member-card-section-2 {
+            display: flex;
+            padding: 1vh 0;
+            flex-direction: column;
+            gap: 1.3vh;
+            p {
+              font-size: 1vw;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.profile-page-header {
+  height: 6vh !important;
+  background: rgba(255, 255, 255, 0);
+  position: absolute !important;
+  top: 0;
+}
+.profile-page-footer {
+  background: rgb(10, 21, 10);
+  height: 5vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    nav {
+      ul {
+        display: flex;
+        list-style-type: none;
+        gap: 20px;
+        li {
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+div:has(.profile-page-header) {
+  > div:nth-of-type(1) {
+    background: red;
+    padding: 0 !important;
+  }
+}

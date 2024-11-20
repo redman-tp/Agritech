@@ -1,0 +1,36 @@
+{
+  "name": "landingpage",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "productName": "Kaduna Agritect Conference",
+  "author": "emmired <emmiredqx@gmail.com>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "deploy": "quasar build && gh-pages -d dist/spa -f"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.4",
+    "axios": "^1.2.1",
+    "firebase": "^10.12.3",
+    "ionicons": "^7.4.0",
+    "quasar": "^2.16.0",
+    "vue": "^3.4.18",
+    "vue-router": "^4.0.12",
+    "vue-scrollto": "^2.20.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^1.9.0",
+    "autoprefixer": "^10.4.2",
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.4.14",
+    "sass": "^1.80.6"
+  },
+  "engines": {
+    "node": "^20 || ^18 || ^16",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
